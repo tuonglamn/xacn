@@ -7,6 +7,7 @@ requirejs.config({
         'async': 'bower/requirejs-plugins/async',
         'domReady': 'bower/requirejs-domready/domReady',
         'map': 'common/map',
+        'slide': 'common/slide',
         'temp': 'common/temp'
     },
     googlemaps: {

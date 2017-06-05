@@ -15,8 +15,8 @@
 	<body>
 		<div th:fragment="site-navbar" class = "top">
 			<div class="bar white padding card-2" style="letter-spacing:4px;">
-			    <a href="#home" class="bar-item button hide-small"><b>X</b>uất <b>Ă</b>n <b>C</b>ông <b>N</b>ghiệp <b>X</b>uân <b>H</b>ương</a>
-			    <a href="#home" class="bar-item button hide-large hide-medium"><b>X</b>uất <b>Ă</b>n <b>C</b><b>N</b> <b>X</b>uân <b>H</b>ương</a>
+			    <a href="#home" class="bar-item button hide-small"><b>S</b>uất <b>Ă</b>n <b>C</b>ông <b>N</b>ghiệp <b>X</b>uân <b>H</b>ương</a>
+			    <a href="#home" class="bar-item button hide-large hide-medium"><b>S</b>uất <b>Ă</b>n <b>C</b><b>N</b> <b>X</b>uân <b>H</b>ương</a>
 			    <a href="javascript:void(0)" class="right button white hide-large hide-medium" id ="sideBarToggle">☰</a>
 			    <!-- Right-sided navbar links. Hide them on small screens -->
 			    <div class="right hide-small">
@@ -27,7 +27,6 @@
 			  </div>
 			  <nav class="sidebar bar-block animate-right top large" id="mySidebar">
 				  <a href="javascript:void()" class="bar-item button left padding-32" id="sideItem">☰</a> 
-				  <a href="#home" class="bar-item button left padding-16" id="sideItem">Trang chủ</a>
 				  <a href="#about" class="bar-item button left padding-16" id="sideItem">Giới thiệu</a>
 				  <a href="#menu" class="bar-item button left padding-16" id="sideItem">Thực đơn</a> 
 				  <a href="#contact" class="bar-item button left padding-16" id="sideItem">Liên hệ</a>
@@ -35,10 +34,23 @@
 		</div>
 		
 		<header th:fragment="site-header" id = "home" class="display-container content wide">
-			<img class="image" src="../static/img/banner.jpg" th:src="@{/img/banner.jpg}" width="1600" height="800"/>
-			<div class="display-bottomleft padding-large opacity">
-	    		<h1 class="xxlarge hide-small">Xuất Ăn Công Nghiệp Xuân Hương</h1>
-	  		</div>
+			<div class="slideshow-container hide-small">
+			  <div class="mySlides fade">
+			    <img src="../static/img/img1.jpg" th:src="@{/img/img1.jpg}" style="width:100%"/>
+			  </div>
+
+			  <div class="mySlides fade">
+			    <img src="../static/img/img2.jpg" th:src="@{/img/img2.jpg}" style="width:100%"/>
+			  </div>
+
+			  <div class="mySlides fade">	
+			    <img src="../static/img/img3.jpg" th:src="@{/img/img3.jpg}" style="width:100%"/>
+			  </div>
+
+			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			</div>
+			
 		</header>
 		<div class="content">
 			<div th:fragment="site-about" class="row padding-64" id="about">
