@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head th:fragment="site-head">
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}" />
+		<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+		<link rel="icon" href="../static/img/favicon.ico" th:href="@{/img/favicon.ico}" />
+		<script th:src="@{/js/bower/requirejs/require.js}"></script>
+		<script th:src="@{/js/config.js}"></script>
+		<script th:src="'/js/'+${page}+'.js'"></script>
+		<meta th:include="this::head" th:remove="tag"/>
+	</head>
+	
+	<body>
+		<div th:fragment="site-navbar" class = "top">
+			<div class="bar white padding card-2" style="letter-spacing:4px;">
+			    <a href="#home" class="bar-item button hide-small"><b>X</b>uất <b>Ă</b>n <b>C</b>ông <b>N</b>ghiệp <b>X</b>uân <b>H</b>ương</a>
+			    <a href="#home" class="bar-item button hide-large hide-medium"><b>X</b>uất <b>Ă</b>n <b>C</b><b>N</b> <b>X</b>uân <b>H</b>ương</a>
+			    <a href="javascript:void(0)" class="right button white hide-large hide-medium" id ="sideBarToggle">☰</a>
+			    <!-- Right-sided navbar links. Hide them on small screens -->
+			    <div class="right hide-small">
+			      <a href="#about" class="bar-item button">Giới thiệu</a>
+			      <a href="#menu" class="bar-item button">Thực đơn</a>
+			      <a href="#contact" class="bar-item button">Liên hệ</a>
+			    </div>
+			  </div>
+			  <nav class="sidebar bar-block animate-right top large" id="mySidebar">
+				  <a href="javascript:void()" class="bar-item button left padding-32" id="sideItem">☰</a> 
+				  <a href="#home" class="bar-item button left padding-16" id="sideItem">Trang chủ</a>
+				  <a href="#about" class="bar-item button left padding-16" id="sideItem">Giới thiệu</a>
+				  <a href="#menu" class="bar-item button left padding-16" id="sideItem">Thực đơn</a> 
+				  <a href="#contact" class="bar-item button left padding-16" id="sideItem">Liên hệ</a>
+			  </nav>
+		</div>
+		
+		<header th:fragment="site-header" id = "home" class="display-container content wide">
+			<img class="image" src="../static/img/banner.jpg" th:src="@{/img/banner.jpg}" width="1600" height="800"/>
+			<div class="display-bottomleft padding-large opacity">
+	    		<h1 class="xxlarge hide-small">Xuất Ăn Công Nghiệp Xuân Hương</h1>
+	  		</div>
+		</header>
+		<div class="content">
+			<div th:fragment="site-about" class="row padding-64" id="about">
+			    <div class="col m6 padding-large hide-small">
+			    	<img src="../static/img/tablesetting2.jpg" th:src="@{/img/tablesetting2.jpg}" class="round image opacity-min" 
+			    		alt="Table Setting" width="600" height="750"/>
+			    </div>
+	    		<div class="col m6 padding-large">
+					<h1 class="center">About Catering</h1><br/>
+				    <h5 class="center">Tradition since 1889</h5>
+				    <p class="large">The Catering was founded in blabla by Mr. 
+						Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit 
+						consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore 
+						et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+						exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+						Duis aute iruredolor in reprehenderit in voluptate velit esse cillum 
+						dolore eu fugiat nulla pariatur.</p>
+	    		</div>
+  			</div>
+  			
+  			 <div th:fragment="site-menu" class="row padding-64" id="menu">
+			    <div class="col l6 padding-large">
+				    <h1 class="center">Our Menu</h1> 
+				    <br/>
+				    <h4>Bread Basket</h4>
+				    <p class="text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p>
+				    <br/>
+				    <h4>Honey Almond Granola with Fruits</h4>
+				    <p class="text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p>
+				    <br/>
+				    <h4>Belgian Waffle</h4>
+				    <p class="text-grey">Vanilla flavored batter with malted flour 7.50</p>
+				    <br/>
+				    <h4>Scrambled eggs</h4>
+				    <p class="text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p>
+				    <br/>
+				    <h4>Blueberry Pancakes</h4>
+				    <p class="text-grey">With syrup, butter and lots of berries 8.50</p>    
+			    </div>
+			    
+			    <div class="col l6 padding-large hide-small">
+			      <img src="../static/img/tablesetting.jpg" th:src="@{/img/tablesetting.jpg}" class="round image opacity-min" alt="Menu" width="500" height="750"/>
+			    </div>
+			</div>
+			
+			<div th:fragment="site-contact" class="container padding-64" id="contact">
+			    <h1>Contact</h1>
+			    <br/>
+			    <div id="googleMap" class="grayscale" style="width:100%;height:400px;"></div>
+			    <br/>
+			    <p>We offer full-service catering for any event, large or small. We 
+					understand your needs and we will cater the food to satisfy the biggerst
+					 criteria of them all, both look and taste. Do not hesitate to contact 
+					us.</p>
+			    <p class="text-blue-grey large"><b>Catering Service, 42nd Living St, 43043 New York, NY</b></p>
+			    <p>You can also contact us by phone 00553123-2323 or email catering@catering.com, or you can send us a message here:</p>
+			    <form action="/action_page.php" target="_blank">
+				    <p><input class="input padding-16" placeholder="Name" required="" name="Name" type="text"/></p>
+				    <p><input class="input padding-16" placeholder="How many people" required="" name="People" type="number"/></p>
+				    <p><input class="input padding-16" placeholder="Date and time" required="" name="date" value="2017-11-16T20:00" type="datetime-local"/></p>
+				    <p><input class="input padding-16" placeholder="Message \ Special requirements" required="" name="Message" type="text"/></p>
+				    <p><button class="button light-grey section" type="submit">SEND MESSAGE</button></p>
+			    </form>
+  			</div>
+		</div>
+		
+		<footer th:fragment="site-footer" class="center light-grey padding-32">
+				<p> &copy; <a href="https://www.facebook.com/tuonglamn" title="https://www.facebook.com/tuonglamn" target="_blank" class="hover-text-green">Nguyễn Tường Lam</a>, 2017</p>
+		</footer>
+		
+	</body>
+</html>

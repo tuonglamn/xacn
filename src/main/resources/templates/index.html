@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head th:replace="layout :: site-head">
+		<title>Xuất ăn Công nghiệp Xuân Hương</title>
+	</head>
+	<body>
+		<div>
+			<div th:replace="layout::site-navbar"></div>
+			<header th:replace="layout::site-header"></header>
+			<div class="content">
+				<div th:replace="layout::site-about"></div>
+				<hr/>
+				<div th:replace="layout::site-menu"></div>
+				<hr/>
+				<div th:replace="layout::site-contact"></div>
+			</div>
+		</div>
+		<footer th:replace="layout::site-footer"></footer>
+	</body>
+</html>
