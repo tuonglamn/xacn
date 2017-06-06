@@ -5,6 +5,7 @@
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" href="../static/css/default.css" th:href="@{/css/default.css}" />
 		<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />
+		<link rel="stylesheet" href="../static/js/bower/flexslider/flexslider.css" th:href="@{/js/bower/flexslider/flexslider.css}" />
 		<link rel="icon" href="../static/img/favicon.ico" th:href="@{/img/favicon.ico}" />
 		<script th:src="@{/js/bower/requirejs/require.js}"></script>
 		<script th:src="@{/js/config.js}"></script>
@@ -34,21 +35,15 @@
 		</div>
 		
 		<header th:fragment="site-header" id = "home" class="display-container content wide">
-			<div class="slideshow-container hide-small">
-			  <div class="mySlides fade">
-			    <img src="../static/img/img1.jpg" th:src="@{/img/img1.jpg}" style="width:100%"/>
-			  </div>
-
-			  <div class="mySlides fade">
-			    <img src="../static/img/img2.jpg" th:src="@{/img/img2.jpg}" style="width:100%"/>
-			  </div>
-
-			  <div class="mySlides fade">	
-			    <img src="../static/img/img3.jpg" th:src="@{/img/img3.jpg}" style="width:100%"/>
-			  </div>
-
-			  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+			<div class="flexslider">
+				<ul class ="slides">
+					<li>
+						<img src="../static/img/img1.jpg" th:src="@{/img/img1.jpg}"/>
+					</li>
+					<li>
+						<img src="../static/img/img2.jpg" th:src="@{/img/img2.jpg}"/>
+					</li>
+				</ul>
 			</div>
 			
 		</header>

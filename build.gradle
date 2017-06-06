@@ -52,7 +52,7 @@ bower {
     
     'requirejs-domready'('latest')
     
-    'lightslider'('1.1.6')
+    'flexslider'('2.6.3')
      
     'googlemaps-amd'('1.0.1')
 }
